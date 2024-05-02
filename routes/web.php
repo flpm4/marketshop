@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
+use App\Models\User;
 
 Route::get('/home', function () {
     return view('welcome');
@@ -13,5 +14,14 @@ Route::view('/cria-conta', 'cria-conta');
 
 Route::view('/testedeconteudo', 'teste');
 
-Route::post('/salva-usuario',  function(request $request ) {dd($request);})->name('salva-usuario');
+Route::post('/salva-usuario',  function(request $request ) {
+    //dd($request);
+$usuario = new User();
+$usuario->name = $request->Nome;
+$usuario->email = $request->Email;
+$usuario->password = $request->Senha;
+$usuario->save();
+dd("salvo com sucesso");
+
+})->name('salva-usuario');
 
