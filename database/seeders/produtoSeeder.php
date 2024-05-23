@@ -27,7 +27,7 @@ class produtoSeeder extends Seeder
                 [
                     'name'=> 'Ferrari Vermelha',
                     'descricao'=> 'Carro para ostentar na rua de cor vermelha',
-                    'valor'=> 3.300000,
+                    'valor'=> 3300000,
                     'foto' => 'https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQtt8MXMC1FzkHVsHcmAF8UBjYuXS9XiujppJdtoI7DxZjWCr0f3oYN62bxh9xdcdKNssyckGZ-tGqIJ34SIcilQxp5nH9j9ZMEASEMI6lXka3Ro5CJvIZH&usqp=CAE',
                     'user_id' => 1,
 
