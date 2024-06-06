@@ -26,6 +26,7 @@ Route::view('/testedeconteudo', 'teste');
 
 Route::post('/salva-usuario',  function(request $request ) {
     //dd($request);
+
 $usuario = new User();
 $usuario->name = $request->Nome;
 $usuario->email = $request->Email;
@@ -41,3 +42,20 @@ dd("salvo com sucesso");
 
 
 Route::view('/cadastra-produto', 'cadastra-produto');
+
+Route::post('/salva-produto',
+function (Request $request) {
+    //dd($request);
+
+$produto = new Produto();
+$produto->name = $request->nome;
+$produto->descricao = $request->descricao;
+$produto->valor = $request->preco;
+
+$file = $request->file('imagem');
+$foto = $file->store('produto', ['disk'=> 'fotos']);
+$produto->user_id = 1;
+$produto->foto = $foto;
+$produto->save();
+dd("Salvo com sucesso!!");
+})->name('salva-produto');
