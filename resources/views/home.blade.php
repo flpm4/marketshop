@@ -34,7 +34,12 @@
       <div class="grid grid-cols-4 gap-3">
         @foreach ($listaProdutos as $produto)
         <div class="card bg-base-100 shadow-xl">
-                    <figure><img class= "aspect-square w-full object-cover" src="{{$produto->foto}}" alt="Shoes" /></figure>
+                    <figure><img class= "aspect-square 
+                    w-full object-cover" src="{{
+                      strpos($produto->foto, 'produto') ===0 ?
+                        asset('fotos/'.$produto->foto) : $produto->foto               
+                    }}" alt="Shoes" />
+                  </figure>
                     <div class="card-body">
                         <h2 class="card-title">{{$produto->name}}</h2>
                         <p>{{$produto->descricao}}</p>

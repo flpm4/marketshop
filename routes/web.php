@@ -67,7 +67,7 @@ dd("Salvo com sucesso!!");
 
 //abre a tela de login
 
-Route::view('/login', 'login')->middleware('auth');
+Route::view('/login', 'login')->name("login");
 
 Route::post('/logar', function (Request $request) {
     //testar se está recebendo os dados, depois aágar
